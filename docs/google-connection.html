@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Google 시트 연결 안내</title>
+<style>body{max-width:760px;margin:40px auto;padding:0 24px;font:16px/1.8 system-ui,sans-serif;color:#28343d;background:#f8f7f3}h1{font-size:26px}h2{margin-top:32px;font-size:20px}li{margin-bottom:10px}a{color:#3554a0}code{overflow-wrap:anywhere}aside{padding:16px;background:#eeefe8;border-radius:10px}</style></head>
+<body>
+<h1>Google 시트 연결</h1>
+<aside>선택 기능입니다. Google 연결을 준비하지 않아도 Excel·CSV 파일이나 표 붙여넣기로 메시지를 만들 수 있습니다.</aside>
+<h2>처음 한 번 준비</h2>
+<ol>
+<li><a href="https://console.cloud.google.com/" target="_blank" rel="noopener">Google Cloud Console</a>에서 사용할 프로젝트를 만들거나 선택하고 <strong>Google Sheets API</strong>를 사용 설정합니다.</li>
+<li><strong>Google Auth platform</strong>의 Branding·Audience에서 앱 이름과 이용 대상을 본인 계정·기관 정책에 맞게 설정합니다. 외부 사용자를 위한 설정은 아래 공식 안내를 확인하세요.</li>
+<li><strong>Clients → Create client → Desktop app</strong>으로 클라이언트를 만듭니다. 웹 애플리케이션이나 서비스 계정용 파일을 대신 사용하지 마세요.</li>
+<li>생성한 클라이언트의 JSON을 본인 PC의 비공개 폴더에 저장합니다. 공개 소스·GitHub 저장소 안에 저장하지 마세요.</li>
+</ol>
+<p>메뉴와 설정에 대한 자세한 기준은 <a href="https://developers.google.com/workspace/sheets/api/quickstart/python" target="_blank" rel="noopener">Google Sheets 공식 시작 안내</a>와 <a href="https://developers.google.com/identity/protocols/oauth2/native-app" target="_blank" rel="noopener">데스크톱 OAuth 안내</a>를 따릅니다.</p>
+<h2>쿨 예약실에서 연결</h2>
+<ol>
+<li><strong>시트·업무자료 → 자료 종류 Google 시트 → Google 읽기 연결</strong>을 엽니다.</li>
+<li>저장한 데스크톱 OAuth JSON의 전체 파일 경로를 입력하고 <strong>Google 읽기 연결</strong>을 누릅니다.</li>
+<li>브라우저에서 시트에 접근할 수 있는 본인 계정과 읽기 권한을 확인해 승인합니다. 이 앱은 <code>spreadsheets.readonly</code> 권한으로 자료를 읽습니다.</li>
+<li>연결 완료 후 앱으로 돌아와 시트 주소·자료 탭·범위를 지정하고 <strong>자료 읽기</strong>를 누릅니다.</li>
+</ol>
+<p>JSON을 만든 Google 계정과 실제 자료를 읽는 계정의 접근 권한을 확인하세요. 기관 관리자가 승인을 제한하면 담당 관리자에게 문의하거나 Excel·CSV로 내려받아 사용하세요.</p>
+<h2>데이터 취급</h2>
+<p>이 앱은 원본 시트를 수정하지 않습니다. 다시 읽기 전까지는 읽어 둔 시점의 자료를 사용합니다. 시트 주소·OAuth JSON·인증 토큰·연결 완료 URL을 공개 이슈나 화면 캡처에 포함하지 마세요.</p>
+</body></html>

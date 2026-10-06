@@ -1,0 +1,72 @@
+[
+  {
+    "package": "pywinauto",
+    "version": "0.6.9",
+    "file": "third-party/pywinauto-0.6.9/LICENSE",
+    "sha256": "18a999a95b7b23d86c410b4534e44d69f6d8ce13c3a53719b06ab895d8a2e73a",
+    "original_license_retained": true
+  },
+  {
+    "package": "comtypes",
+    "version": "1.4.17",
+    "file": "third-party/comtypes-1.4.17/licenses/LICENSE.txt",
+    "sha256": "3b1767f010980b46926b23bf0afce5d72f3359ee5e2b27baca71b9b4209ab383",
+    "original_license_retained": true
+  },
+  {
+    "package": "six",
+    "version": "1.17.0",
+    "file": "third-party/six-1.17.0/LICENSE",
+    "sha256": "4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0",
+    "original_license_retained": true
+  },
+  {
+    "package": "pywin32",
+    "version": "312",
+    "file": "third-party/pywin32-312/licenses/adodbapi/license.txt",
+    "sha256": "5ea2f23c7f00c3006bacf267183e816d8d4b6dc95ea57a4ddb0ff81de6d8719e",
+    "original_license_retained": true
+  },
+  {
+    "package": "pywin32",
+    "version": "312",
+    "file": "third-party/pywin32-312/licenses/com/License.txt",
+    "sha256": "fad39c18fc3825fa278db1c86fd52cf88d7c525b3c2fbf7817fa383cbae4d423",
+    "original_license_retained": true
+  },
+  {
+    "package": "pywin32",
+    "version": "312",
+    "file": "third-party/pywin32-312/licenses/pythonwin/License.txt",
+    "sha256": "a74d826efb242db087b850348e20abbfd591b51e2081f2048735290913872924",
+    "original_license_retained": true
+  },
+  {
+    "package": "pywin32",
+    "version": "312",
+    "file": "third-party/pywin32-312/licenses/win32/License.txt",
+    "sha256": "a74d826efb242db087b850348e20abbfd591b51e2081f2048735290913872924",
+    "original_license_retained": true
+  },
+  {
+    "package": "pywin32",
+    "version": "312",
+    "file": "third-party/pywin32-312/licenses/pythonwin/Scintilla/License.txt",
+    "sha256": "57ec79bbeab4fd1cf7460a7ad450d2ab01471810459aeae9e75e4c66b472095f",
+    "original_license_retained": true
+  },
+  {
+    "package": "pywin32",
+    "version": "312",
+    "file": "third-party/pywin32-312/licenses/pythonwin/pywin/idle/LICENSE.txt",
+    "sha256": "a0fa1e7b8a4230055685e796548ac084a6c0eea395294574093bba72efd9191b",
+    "original_license_retained": true
+  },
+  {
+    "package": "pywin32",
+    "version": "312",
+    "file": "third-party/pywin32-312/licenses/com/win32comext/mapi/src/MAPIStubLibrary/LICENSE",
+    "sha256": "1c4cf44d2fb8bf2d10214d6da80cc9e05502824cc4460f35be4c7bcb4cde53da",
+    "original_license_retained": true
+  }
+]
