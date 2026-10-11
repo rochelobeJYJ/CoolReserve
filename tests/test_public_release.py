@@ -106,6 +106,36 @@ class PublicReleaseTests(unittest.TestCase):
         with self.assertRaises(PublicAuditError):
             load_allowlist(self.root)
 
+    def test_allowlisted_typescript_and_tsx_use_the_existing_text_audit(self):
+        sources = {
+            'module/logic.ts': 'export const title: string = "합성 자료";\n',
+            'module/App.tsx': 'export function App() { return <div>합성 검토</div>; }\n',
+            'module/LICENSE-ADDITIONAL-TERMS': 'Synthetic additional license terms.\n',
+        }
+        (self.root / 'module').mkdir()
+        for name, source in sources.items():
+            (self.root / name).write_text(source, encoding='utf-8')
+        self.configure(['README.md', CONFIG, *sources])
+        self.assertTrue(audit(self.root)['passed'])
+        result = build(self.root, self.base / 'public')
+        self.assertTrue(result['passed'])
+        self.assertTrue(audit(self.base / 'public', staging=True)['passed'])
+
+    def test_typescript_keeps_secret_private_marker_and_binary_rejection(self):
+        marker = 'PrivateFixture' + 'Person'
+        secret = 'ghp_' + 'q' * 30
+        cases = [(secret.encode(), 'secret_literal'),
+                 (marker.encode(), 'private_deny_match'),
+                 (b'export const value = "\x00";', 'binary_text_file'),
+                 (b'\xff', 'invalid_text_encoding')]
+        for suffix in ('.ts', '.tsx', '/LICENSE-ADDITIONAL-TERMS'):
+            for data, category in cases:
+                with self.subTest(suffix=suffix, category=category):
+                    findings = inspect_bytes('module/source' + suffix, data, [marker])
+                    self.assertIn(category, [item['type'] for item in findings])
+                    self.assertNotIn(secret, json.dumps(findings))
+                    self.assertNotIn(marker, json.dumps(findings))
+
     def test_missing_file_fails(self):
         self.configure(['absent.py'])
         self.assertEqual(audit(self.root)['problems'][0]['type'], 'missing_file')

@@ -4,6 +4,8 @@
 
 쿨메신저의 공식 제품이나 공식 API가 아닙니다. 로그인한 사용자의 작성창을 자동으로 조작하므로 등록 중에는 마우스·키보드를 잠시 비워두어야 합니다.
 
+TeacherDeck 연동은 같은 원작 코어를 쓰는 고정 비공개 작업자로 별도 개발합니다. 관리 실행 환경과 파일 해시를 TeacherDeck 호스트가 책임지며, 독립판 설치·실행 방법은 아래와 같습니다. [개발 계약과 검증 범위](docs/TEACHERDECK.md)를 참고하세요. 실제 메시지 발송 검증을 완료했다고 표시하지 않습니다.
+
 ## 다운로드
 
 **[최신 버전 다운로드](https://github.com/rochelobeJYJ/CoolReserve/releases/latest)**에서 첨부된 배포 ZIP을 받으세요. 실행파일 하나로 된 제품이 아니라, 아래 설치 과정을 거쳐 사용하는 소스 배포본입니다.
@@ -112,4 +114,4 @@ node -e "for (const f of require('fs').readdirSync('tests').filter(x=>x.endsWith
 
 먼저 [문제 해결표](docs/FIRST_RUN.md#문제-해결)를 확인하세요. 해결되지 않으면 [GitHub Issues](https://github.com/rochelobeJYJ/CoolReserve/issues)에 오류 문구와 재현 순서, Windows·Python·쿨메신저 버전을 적어주세요. **실제 이름·메시지·기관 자료·인증 파일은 첨부하지 마세요.** 진단 정보를 공유할 때도 내용을 먼저 확인합니다.
 
-프로젝트는 [MIT](LICENSE), 의존성은 [제3자 고지](THIRD_PARTY_NOTICES.md)를 따릅니다. 쿨메신저 실행파일·제품 코드·화면 캡처는 포함하지 않습니다.
+독립판 Python 앱은 [MIT](LICENSE), 의존성은 [제3자 고지](THIRD_PARTY_NOTICES.md)를 따릅니다. 새 [티처덱 웹 모듈](teacherdeck/README.md)은 TeacherDeck의 GPL-3.0-only와 추가 약관을 따르며 원작 MIT 고지도 보존합니다. 쿨메신저 실행파일·제품 코드·화면 캡처는 포함하지 않습니다.

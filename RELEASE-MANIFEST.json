@@ -3,8 +3,8 @@
   "files": [
     {
       "path": ".gitignore",
-      "bytes": 2892,
-      "sha256": "ccbd4e80f4c86d8be6c1c2ffe34dab290599a27dbb20d90642356ebb42b7f5a1"
+      "bytes": 3849,
+      "sha256": "8113a3eea925ddfb501393fe7ef3aa99281963794c4bffcb4abf4b5b3cd67ca9"
     },
     {
       "path": "INSTALL.cmd",
@@ -13,13 +13,13 @@
     },
     {
       "path": "LICENSE",
-      "bytes": 1081,
-      "sha256": "7fb8e566b1b2e36f850c94c3463772e4e914dc241f6127647ecedede65745c88"
+      "bytes": 1102,
+      "sha256": "44730297781d77dc3da9593c0c25a7e0f71c9b377fd3774367659f2dd048702b"
     },
     {
       "path": "README.md",
-      "bytes": 11120,
-      "sha256": "eaf7950194d5532235d9bbe7c0be6bcb4fb1c01544c716d1b95075684ed50691"
+      "bytes": 11675,
+      "sha256": "b9a63f6ad9ded6f3812ecbbae24cab03f9320e995607c160181b1cfd0302f700"
     },
     {
       "path": "START.cmd",
@@ -33,18 +33,18 @@
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 1719,
-      "sha256": "15a6c453baf3a8a64c3e14f265c2aad7055a2c6610a7f86fbc05aa7befca898a"
+      "bytes": 1737,
+      "sha256": "94a85dd29ee14c193546b9a6b61409be719f3ed605c27b78a382d63508fec44a"
     },
     {
       "path": "app/__init__.py",
-      "bytes": 75,
-      "sha256": "892c81204323db87fd1265446e13d133de1afecc25f1a675725115457ff92483"
+      "bytes": 77,
+      "sha256": "1ba15621c14ebaedbbed54624eb383b126a51f239a3a22939a8948124b4e63e7"
     },
     {
       "path": "app/batch.py",
-      "bytes": 7365,
-      "sha256": "794ed555dbeec13ba4a7a95b742295cc08b33b8c0f5d40dcc4d48f783fb37c9f"
+      "bytes": 7501,
+      "sha256": "2e5af6bd85b8150b89798ee3bf3d1556ad187196b4901f34a5b3b48109c9a2a3"
     },
     {
       "path": "app/core.py",
@@ -53,53 +53,58 @@
     },
     {
       "path": "app/draft_recovery.py",
-      "bytes": 3488,
-      "sha256": "4b46d5d6b1722bb9a35a5b5fe541f3c16e4c977858687776194df8ed20e5c65b"
+      "bytes": 3545,
+      "sha256": "9ac6caf71102f1014dd52ff8998ec5edb51e5cb76b06c677cd2e2756a77432a7"
     },
     {
       "path": "app/engine.py",
-      "bytes": 19316,
-      "sha256": "4ea01c28c6b34c1a8156ec5033d0db0fa30b08b752896ce2c9c61be85b1eeeff"
+      "bytes": 19610,
+      "sha256": "76795768fc745c82ebd2f8b27e58581f1b802c7582236788722691ca9d5df4fe"
     },
     {
       "path": "app/gentoo.py",
-      "bytes": 31409,
-      "sha256": "69161c757e23effe281145a21469cbbd550ad974a15b68a4746d79dbe87e1dba"
+      "bytes": 32045,
+      "sha256": "996b1c8e01cb2b1a43f729f0ed636a47ff4f151cb62034765903cb626f1b3179"
     },
     {
       "path": "app/gentoo_tree.py",
-      "bytes": 13528,
-      "sha256": "46e6ed991fd5ea3681e8c3c11050d6c5d888b056c12a57655fbbff8d921a7f55"
+      "bytes": 13804,
+      "sha256": "8130a37ae13d1a4a39406a7fabaf88f9ca1ab944a954b0f2af882c5e91472c60"
     },
     {
       "path": "app/importers.py",
-      "bytes": 6858,
-      "sha256": "4b59be2fe63d0ed555424373ce7c8f1eb78fe4c60b4c31b1c50ff0f9b0a57e6a"
+      "bytes": 6993,
+      "sha256": "8c2add6a5ab9f35bab09c10fd882e9fae2b4f1a14c3382d06ad78daa59dd5c57"
     },
     {
       "path": "app/privacy.py",
-      "bytes": 4297,
-      "sha256": "d4a826cd81aaf6ac598f155b263814c00f419858790e8e23bad811c18606f26f"
+      "bytes": 4378,
+      "sha256": "56d74a3193e54e97f6d4655e141cb310cf074d7ea7c8f34d119bab8867a69652"
     },
     {
       "path": "app/recipients.py",
-      "bytes": 5509,
-      "sha256": "93d6f6d7fb6c5d3058f6b959b95c24816071b0995a2271028ee96199ce7b32d0"
+      "bytes": 5619,
+      "sha256": "6ec4065989d4feeb95dddbed48614d4b91f5a920168b0ebfd36b52e382988040"
     },
     {
       "path": "app/sheets.py",
-      "bytes": 33463,
-      "sha256": "e38e17344afeb8c1cb530da412a6d535d188b9bb1eccb1d1f6ba983503e878b5"
+      "bytes": 34053,
+      "sha256": "c3931ae4197af063f2654d79707a1ecbabc3f52fcc3ff3f06200f057150b66e8"
+    },
+    {
+      "path": "app/teacherdeck_worker.py",
+      "bytes": 20560,
+      "sha256": "01a6aca0d20289561afdab0e553225fcb17371e9439c9d81112c744cddcc201f"
     },
     {
       "path": "app/verification.py",
-      "bytes": 3298,
-      "sha256": "c4564ac0c7b37536302fb9e39c5231f5f23d4dae86abe51bba5c69d88b8df6b0"
+      "bytes": 3360,
+      "sha256": "01d76c719eff74f380f5b9830c0c65767cdabcc6ef80d97c858c513431d24508"
     },
     {
       "path": "app/waiting.py",
-      "bytes": 822,
-      "sha256": "c6e90703e09e0b5972e130e210913eac0e30d0b1965a67bbcdf2527437a1b6ec"
+      "bytes": 845,
+      "sha256": "d52c71ad97d08a8d6572244105fc01926a7aa21a18f8c45e2dcc6eb1473cdb36"
     },
     {
       "path": "app/windows.py",
@@ -108,43 +113,183 @@
     },
     {
       "path": "app/workflows.py",
-      "bytes": 34347,
-      "sha256": "ac241025822b14e20eed3a745b5651c324a283ba07c10badf1fac2c4bf9ad06b"
+      "bytes": 34897,
+      "sha256": "f88371c94bad02f8d39efb0327cce112ea348ce93fda0cd2575bc79aea1e53b8"
     },
     {
       "path": "docs/FIRST_RUN.md",
-      "bytes": 11016,
-      "sha256": "59c9dd7614c91ebb28f390c82fd613aecd488541b822cd7b0b80250fd96d1036"
+      "bytes": 11114,
+      "sha256": "3e6dd6fbc3e9b5a0201b316342f9fcd03cd8d7d4762442edc7b242895889b540"
     },
     {
       "path": "docs/PRIVACY.md",
-      "bytes": 3114,
-      "sha256": "b0bf18f945931ae8ab247ae14e6242caa4340daedcf1cfde6ff950b4eda62a3c"
+      "bytes": 3148,
+      "sha256": "06989549ccd823603764df3d78b665bd275ef17159d63ac84a73dadb9b1ebb6c"
     },
     {
       "path": "docs/PUBLISHING.md",
-      "bytes": 7328,
-      "sha256": "45d374efc07549b4d3dbeec939bcffe17e3d3ba74620beedbc910396352ba269"
+      "bytes": 7391,
+      "sha256": "fee8cc87f1791304e9bf15b48e58845af4e63e1f591eda7a3f4584ccf6389a21"
+    },
+    {
+      "path": "docs/TEACHERDECK.md",
+      "bytes": 4814,
+      "sha256": "2a2429565cf354767e9f6af440405a4ec02104e1f533e067680b522e6172542f"
     },
     {
       "path": "docs/google-connection.html",
-      "bytes": 3099,
-      "sha256": "66db6c2ae89c862ffe39cd01bd8421a6bcb90f17ffaf324fc65636a91b2f014c"
+      "bytes": 3125,
+      "sha256": "ec940ffe37b10889375b38b8412df597652f19504079b8f459c624f87284d2c1"
     },
     {
       "path": "public-release.json",
-      "bytes": 2990,
-      "sha256": "799c8902829c090ba8483022c785ce80b613676056fd86fda067f95e850e54e4"
+      "bytes": 4115,
+      "sha256": "26e824702bf0c4be98e253ebde386881f91e85de75cd533691b2132fea0d5584"
     },
     {
       "path": "requirements.txt",
-      "bytes": 134,
-      "sha256": "fa73e5511c9d746495576b7c95f2d1e6b189b34b2f1f010ac562ec9db7336245"
+      "bytes": 138,
+      "sha256": "e7294e56526ea15e78fc1ab24aae6c0dafa79ebc6255b0ce81595ebfd1935798"
     },
     {
       "path": "server.py",
       "bytes": 30883,
       "sha256": "46add22a2a7128e2ff0679a2753954ac14bca57d9e9dea2f0ca79c9389a9eb5e"
+    },
+    {
+      "path": "teacherdeck/LICENSE",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "teacherdeck/LICENSE-ADDITIONAL-TERMS",
+      "bytes": 848,
+      "sha256": "2af7f436b7b224329d8177b4892267f7208a58a9c798709f749198c3c7682c58"
+    },
+    {
+      "path": "teacherdeck/README.md",
+      "bytes": 1268,
+      "sha256": "473155613109e681974e84383c46e4e5b429c4e13b1ab8bc25920ee886f6b379"
+    },
+    {
+      "path": "teacherdeck/module/CHANGELOG.md",
+      "bytes": 1267,
+      "sha256": "01bb8ea4f58e40ac2400668adb65af25c534a555055e200f2d606f48dadd09d5"
+    },
+    {
+      "path": "teacherdeck/module/README.md",
+      "bytes": 7623,
+      "sha256": "d43e29723d37fd124599f03e33e46156c91fe67f45227987073fb74336e5d483"
+    },
+    {
+      "path": "teacherdeck/module/icon.svg",
+      "bytes": 308,
+      "sha256": "eabd02b065b9a59798cf02ac59808511fbea34ab4fd4cbfe39e538db7ca49f7a"
+    },
+    {
+      "path": "teacherdeck/module/index.html",
+      "bytes": 404,
+      "sha256": "625e5f320e09d15370fa05d008f5702bf673aae1b584b53a787ccea3c1447d51"
+    },
+    {
+      "path": "teacherdeck/module/module.json",
+      "bytes": 577,
+      "sha256": "989f61e2b227fdc576a5c6d5cac3dc30f6b83a2a8059be09597e5daeabbc3df8"
+    },
+    {
+      "path": "teacherdeck/module/package.json",
+      "bytes": 398,
+      "sha256": "865921ad8fb3922370af1a2832f08331699f319339c6601c0db64e97f8bb7a6b"
+    },
+    {
+      "path": "teacherdeck/module/src/App.test.tsx",
+      "bytes": 6642,
+      "sha256": "c22f882e2a28423868cd061d7ace723be2ec29f985f2730da65ce21c0bc34dc7"
+    },
+    {
+      "path": "teacherdeck/module/src/App.tsx",
+      "bytes": 62403,
+      "sha256": "819e9724a4701ee491fffb52d03122c20b3bbaf168cb94a14c1ad8447fc1323b"
+    },
+    {
+      "path": "teacherdeck/module/src/Editor.tsx",
+      "bytes": 9292,
+      "sha256": "e2cd4658a3881d7addef8902910dc236cffed641c6966506abd64774c3a762a4"
+    },
+    {
+      "path": "teacherdeck/module/src/archive.worker.ts",
+      "bytes": 2828,
+      "sha256": "ba120755675fcbca71fda87160a6a3ac3df724adf6f42fcd4cc567bad809dccd"
+    },
+    {
+      "path": "teacherdeck/module/src/chunked-storage.ts",
+      "bytes": 6770,
+      "sha256": "187bdfafb42436d4ecbb4f3cc83232c410220fbb3eeb32d03f05a3ff68155467"
+    },
+    {
+      "path": "teacherdeck/module/src/io.ts",
+      "bytes": 5958,
+      "sha256": "0394fe3245f5c4902054d26d5bcaa530c256767cabeff5dc3c9518845ce72858"
+    },
+    {
+      "path": "teacherdeck/module/src/logic.test.ts",
+      "bytes": 4406,
+      "sha256": "f47c5fa3ba6516a9b9cdd68f511e1d235d590c589be08bebdf2ecc681ca1bbec"
+    },
+    {
+      "path": "teacherdeck/module/src/logic.ts",
+      "bytes": 13717,
+      "sha256": "07cabb03bc67878099a86600bee07fa8a58614f02052374efa44c06c99b90a21"
+    },
+    {
+      "path": "teacherdeck/module/src/main.tsx",
+      "bytes": 920,
+      "sha256": "b183e7d8f69dd33fd27ec454ad20f007d879df17f3d390f771f4a058e133b139"
+    },
+    {
+      "path": "teacherdeck/module/src/state.test.ts",
+      "bytes": 3838,
+      "sha256": "922de9c0c934e53407a7e0c8212fa8afe7592275046b2bddba359d9f9e2a42aa"
+    },
+    {
+      "path": "teacherdeck/module/src/state.ts",
+      "bytes": 5464,
+      "sha256": "5a69370fb301a06df7f142f6ccc1d86d40849eb1df40efc748287097e4bc80f2"
+    },
+    {
+      "path": "teacherdeck/module/src/workbook.test.ts",
+      "bytes": 3000,
+      "sha256": "a34e673fd5fb1df650006b6c10c3991a0f5c18f76b3946661eac27998011ff92"
+    },
+    {
+      "path": "teacherdeck/module/src/workbook.ts",
+      "bytes": 7875,
+      "sha256": "4017b20ea88ed1b08f93c293a94015c6a0114834a4e80aaa88c94e996a45c5f7"
+    },
+    {
+      "path": "teacherdeck/module/src/workflows.test.ts",
+      "bytes": 5329,
+      "sha256": "f51ee1c2dd3a9714e1ba6f275d28fdbed5518d6931e1c662e3b07d488b0e2524"
+    },
+    {
+      "path": "teacherdeck/module/src/workflows.ts",
+      "bytes": 13139,
+      "sha256": "b9c17565e488e3ad2bee674f2ed8c15642d87dde644c249a71d4715387c4903f"
+    },
+    {
+      "path": "teacherdeck/module/tsconfig.json",
+      "bytes": 113,
+      "sha256": "cdaff6dad17944d1173733acc730090277c66c3dabab9ce10ab6b95fd620b980"
+    },
+    {
+      "path": "teacherdeck/module/vite.config.ts",
+      "bytes": 543,
+      "sha256": "60b010d93401452ab82ae3f515baa251064b24a9651335b1bd0ae454c365c076"
+    },
+    {
+      "path": "teacherdeck_worker.py",
+      "bytes": 481,
+      "sha256": "4aea0e13f61bf2bc7e240f925d719836c5b4e6bf161e231b3713a5ec8a751553"
     },
     {
       "path": "templates/lunch_preset.xlsx",
@@ -168,8 +313,8 @@
     },
     {
       "path": "tests/test_archive_past.py",
-      "bytes": 11305,
-      "sha256": "534ffa47baae8c45fcaecb204ce998f8eaadeebbff6c3b8215ea9d17fba91a57"
+      "bytes": 11506,
+      "sha256": "fdc91e341871db1523d82193bc09132685567da09c8e5c62b76a8f29f69736e9"
     },
     {
       "path": "tests/test_automatic_connection.py",
@@ -178,23 +323,23 @@
     },
     {
       "path": "tests/test_batch_review_ui.cjs",
-      "bytes": 7812,
-      "sha256": "b7cb56a1b880ffb05805c862931a9b47eebcfff4adb7f3c076333913563bbf14"
+      "bytes": 7862,
+      "sha256": "ab1a7b423aa7766d9a8479eaf6108a7a6e9c84e4f6ec941066dd7f7e579a2d79"
     },
     {
       "path": "tests/test_batch_ui.cjs",
-      "bytes": 3168,
-      "sha256": "8199483099835d8c88548dacc9c18f92dce9065b517e21b65209c469c2c3c78a"
+      "bytes": 3213,
+      "sha256": "14bed08fe8d56e64a93ba62e6fb27d429e4858b4c11526fac605071481e78a0e"
     },
     {
       "path": "tests/test_caption_activation.py",
-      "bytes": 6500,
-      "sha256": "64d132978af806d251c8b11abe5ae0dcf1055caa40a9a09523f4346c6adadc25"
+      "bytes": 6622,
+      "sha256": "8cdf296570e9cac2234fb82bb6af074e2e44d8f9ba7f8072612362881f8e12db"
     },
     {
       "path": "tests/test_click_adapter.py",
-      "bytes": 11458,
-      "sha256": "5c058daf8052b544019812759f5cbdc71f2250bb934a9f0e55303b66e7972de8"
+      "bytes": 11703,
+      "sha256": "d4a61f6a8073ed33abdff76650fdf45b5940be95e77f5d4933553f977e3dd39c"
     },
     {
       "path": "tests/test_com_runtime.py",
@@ -203,8 +348,8 @@
     },
     {
       "path": "tests/test_compact_review_ui.cjs",
-      "bytes": 6842,
-      "sha256": "f945da9f82d97891a4f41bfa7b1f0969d67795a190a44054efe4ae16a749d3a7"
+      "bytes": 6915,
+      "sha256": "027431408012baaac6845f5d91f05cd4d76117fe415a0cfd2d77f8f186978e16"
     },
     {
       "path": "tests/test_gentoo_body.py",
@@ -213,8 +358,8 @@
     },
     {
       "path": "tests/test_gentoo_picker_button.py",
-      "bytes": 8195,
-      "sha256": "a67dc1377131a9c54c2585b83027c54da6aa641e1c0448935821ba44d978440f"
+      "bytes": 8359,
+      "sha256": "2f8839022a34b11bb22f5ba9fe60947c90b7eb5c30dff4bb3d9fc464f7ef1f7d"
     },
     {
       "path": "tests/test_gentoo_tree.py",
@@ -223,13 +368,13 @@
     },
     {
       "path": "tests/test_importer_table_errors.py",
-      "bytes": 4823,
-      "sha256": "00440d9f09f92fca5e57ed92d177cb911fdb52c82501fab68b92b12c4589e8d7"
+      "bytes": 4915,
+      "sha256": "b80c3afb90ce631058864c6a1fab46c72dc487557955b0b0c78355892b2151e8"
     },
     {
       "path": "tests/test_installation.py",
-      "bytes": 6930,
-      "sha256": "9dbfd207ba7945bc1a39625af2261e4a719db2cfa287d4db6cc003eae0abbfe5"
+      "bytes": 7053,
+      "sha256": "b1ef95279e8e0df4c2d90a17c2e53954171955d9f583f31586f3ff4dd26f4898"
     },
     {
       "path": "tests/test_instance_lock.py",
@@ -238,8 +383,8 @@
     },
     {
       "path": "tests/test_launcher.py",
-      "bytes": 9336,
-      "sha256": "8fc7b7fe512730779ba0b7a71d972e5c8e0a2fe9e4e41abafb76002d74f62eae"
+      "bytes": 9479,
+      "sha256": "f50518a0e804bc7973a44a2ff4c66eafa7759590deba1c2c3f40939b8dadd8d2"
     },
     {
       "path": "tests/test_manual_confirmation_ui.cjs",
@@ -253,18 +398,18 @@
     },
     {
       "path": "tests/test_optional_title.py",
-      "bytes": 14405,
-      "sha256": "674e7b90224b9fde02bc7d7c9ea8beb9ad414934db1a81ed46ff77db202f5f88"
+      "bytes": 14675,
+      "sha256": "83d610c8ef0cd3e415e877e5c3e9add264812b772867de8f1ad9f3f645ed7752"
     },
     {
       "path": "tests/test_polling_ui.cjs",
-      "bytes": 2457,
-      "sha256": "5c4048a398bac0b4dba0d891177414bb9777b47529471765cbc156fdb9497ec2"
+      "bytes": 2516,
+      "sha256": "aab8e96028dfaf19c1a9291816eef22608c06c93b5b45aa0b37f03eafadee01a"
     },
     {
       "path": "tests/test_preparation_recovery.py",
-      "bytes": 13381,
-      "sha256": "21876710a5578588951c521e29e5f4e7a524635066102ad383a1463537676f8d"
+      "bytes": 13653,
+      "sha256": "2697828852efa886da4516550cbec1210014b2906aa8e15e0127e6fcaf29eb2a"
     },
     {
       "path": "tests/test_public_first_use_ui.cjs",
@@ -273,8 +418,8 @@
     },
     {
       "path": "tests/test_public_release.py",
-      "bytes": 8979,
-      "sha256": "3bb1694aa2766c413d72bd672588a8e18692d78a1682bba71fbe290d3c7ef9e5"
+      "bytes": 10666,
+      "sha256": "f9b8b19007c204aac0ca46aec651e996803db91a4f124058ec98cb971396a02f"
     },
     {
       "path": "tests/test_registration_guide_ui.cjs",
@@ -283,13 +428,13 @@
     },
     {
       "path": "tests/test_root_enumeration.py",
-      "bytes": 4792,
-      "sha256": "5e27a7e6a507a40699e8b1f0008feaf4f9b2cf0c688114c16a0674575a965a6b"
+      "bytes": 4888,
+      "sha256": "dfc107dfb65f1a7f4ecd2769dd7a2074a55fe0fdee83fec7513929d673ed8a5f"
     },
     {
       "path": "tests/test_sheet_formula_cache.py",
-      "bytes": 2534,
-      "sha256": "49613929d342777bc961114dd87e507f9423957b146578c6d21d2fcb71758c71"
+      "bytes": 2587,
+      "sha256": "767f2be528ae8ee2a5190bdcb6dfacdee3e63b3c1326ca41ad51477a2f8568f3"
     },
     {
       "path": "tests/test_startup.py",
@@ -297,9 +442,14 @@
       "sha256": "061ee560c908b5dfc784b003914f88e3bece745ceb2204f1f72eed15840f7465"
     },
     {
+      "path": "tests/test_teacherdeck_worker.py",
+      "bytes": 12637,
+      "sha256": "9cc2baf8a755212a80f115cb779960b4eed6d40bea16d1b283ac32a7f703691c"
+    },
+    {
       "path": "tests/test_window_diagnosis.py",
-      "bytes": 8030,
-      "sha256": "1825754c0e0f3f4c6c827afe138c7fd3120d937c2f21cf510857a53d7684b769"
+      "bytes": 8161,
+      "sha256": "498bb931d0b67583c685d83105196e471e70b4e4f36eea27547720c838bf6846"
     },
     {
       "path": "tests/test_windows_pc.py",
@@ -313,8 +463,8 @@
     },
     {
       "path": "tests/test_workflow_render_ui.cjs",
-      "bytes": 3666,
-      "sha256": "f0f679180348dd8af5de339549c143a51316129e979e4ccfaf50b2177b99994e"
+      "bytes": 3747,
+      "sha256": "d15007de8c5690e3a5a81c295f03b06aaec4208095b779a720517dbc12422012"
     },
     {
       "path": "third-party/comtypes-1.4.17/licenses/LICENSE.txt",
@@ -363,43 +513,48 @@
     },
     {
       "path": "third-party/pywinauto-0.6.9/LICENSE",
-      "bytes": 1504,
-      "sha256": "18a999a95b7b23d86c410b4534e44d69f6d8ce13c3a53719b06ab895d8a2e73a"
+      "bytes": 1530,
+      "sha256": "c991cb436a087a4b896a9a949df50c63da9326ffe1a7dec7358cd2f40d43fbec"
     },
     {
       "path": "third-party/six-1.17.0/LICENSE",
-      "bytes": 1066,
-      "sha256": "4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0"
+      "bytes": 1084,
+      "sha256": "b4d3d680140254b09d8904f740fdb8684035f5a91cae0e49a02e045ce9bbbfe2"
     },
     {
       "path": "tools/build_public_release.py",
-      "bytes": 4484,
-      "sha256": "93f916a45b20c6c608bf47b97ac645dc94cb6267f22835f7e1522dd7cdc55e91"
+      "bytes": 4572,
+      "sha256": "f274c28cf0f031c4b60d98909e62701c742cb4254e73fddbcb789674c49ba781"
     },
     {
       "path": "tools/check_environment.py",
-      "bytes": 1044,
-      "sha256": "37d6f0ce98ed19908f7a3cd07b7d770cb3e554106176deaf75a623a8ffb44559"
+      "bytes": 1069,
+      "sha256": "8f0e3567543427f741fc5faee13d1f79863d11c5c827d96b9fe34676efad0bb9"
     },
     {
       "path": "tools/check_public.py",
-      "bytes": 10938,
-      "sha256": "7e504d7b4a84eaa93e926c647aee668e8513402e0c480adcdb59442aa7218d18"
+      "bytes": 10981,
+      "sha256": "a3b7d975d146a56f1b07e56e04051f6b8b24de9f9b5a5be8b77024c87a3a2a89"
     },
     {
       "path": "tools/install.ps1",
-      "bytes": 2768,
-      "sha256": "fa16c68f8f504eb60385e70a6faed73462e0e5850a6a2774d8b5310b91722a82"
+      "bytes": 2828,
+      "sha256": "89e77378442a79671ef4cd64e3e89be95ee0406d25e3828a759dd1c0c6b680a2"
     },
     {
       "path": "tools/launch.ps1",
-      "bytes": 3314,
-      "sha256": "433edfa2b33578c9340b8577a4080721a25c5bfa285205b33c35d0978d1bc04a"
+      "bytes": 3389,
+      "sha256": "a18863953170b424a5ec23cc8291524defc0a39d9e1c6c86b2dc1e983fe84a63"
+    },
+    {
+      "path": "tools/test_teacherdeck_managed.py",
+      "bytes": 2056,
+      "sha256": "97f6ce6ac06a7aadcb761da47fc4e9c6bc85c96727bf553b5d2b91684f6ecfc3"
     },
     {
       "path": "tools/verify_offline.py",
-      "bytes": 1068,
-      "sha256": "ea95b1f9be6d85dd3e792c46e025de19dbb1d3aef5b4f8c8a2f4a4cfdcd0ef47"
+      "bytes": 1090,
+      "sha256": "101a1270e2625943f838aa50ad9ff2e48ead769a8e3b9a6ec313765adb2e44d4"
     },
     {
       "path": "web/app.js",
@@ -413,8 +568,8 @@
     },
     {
       "path": "web/favicon.svg",
-      "bytes": 310,
-      "sha256": "bc2c6e0ad7bf19d99555b26959f41ff9ab5e3978b8dc8e9c3332604e381e3337"
+      "bytes": 311,
+      "sha256": "740c9d97f81f43f37f1bd5fa7c4648e24defbc6f8701cc42519139ac59d59622"
     },
     {
       "path": "web/index.html",
