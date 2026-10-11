@@ -1,0 +1,6 @@
+<!-- SPDX-License-Identifier: GPL-3.0-only -->
+<!-- Additional terms: see LICENSE-ADDITIONAL-TERMS -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <rect x="4" y="4" width="40" height="40" rx="10" fill="#0f6cbd"/>
+  <rect x="14" y="14" width="20" height="20" rx="4" fill="#ffffff"/>
+</svg>

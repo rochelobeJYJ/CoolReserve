@@ -18,7 +18,7 @@ CONFIG = 'public-release.json'
 RECEIPT = 'RELEASE-MANIFEST.json'
 MAX_FILE = 8 * 1024 * 1024
 MAX_EXPANDED = 32 * 1024 * 1024
-TEXT_SUFFIXES = {'.py', '.js', '.cjs', '.css', '.html', '.svg', '.md', '.json', '.csv', '.txt', '.cmd', '.ps1'}
+TEXT_SUFFIXES = {'.py', '.js', '.ts', '.tsx', '.cjs', '.css', '.html', '.svg', '.md', '.json', '.csv', '.txt', '.cmd', '.ps1'}
 FORBIDDEN_PARTS = {'.git', '.qa-data', '.test-temp', '.offline-data', '.venv', '__pycache__',
                    'output', 'outputs', 'dumps', 'runtime', 'node_modules', 'ui-proposal', 'research'}
 FORBIDDEN_NAMES = {'session.json', '.gentoo_inspection.json', 'windows_v1_original.txt',
@@ -138,7 +138,7 @@ def inspect_bytes(name: str, data: bytes, deny: list[str]) -> list[dict]:
         except (OSError, ValueError, UnicodeError, zipfile.BadZipFile, RuntimeError, ET.ParseError):
             issues.append({'type': 'invalid_workbook_archive'})
         return issues
-    if suffix not in TEXT_SUFFIXES and PurePosixPath(name).name not in {'LICENSE', '.gitignore'}:
+    if suffix not in TEXT_SUFFIXES and PurePosixPath(name).name not in {'LICENSE', 'LICENSE-ADDITIONAL-TERMS', '.gitignore'}:
         return [{'type': 'unsupported_file_type'}]
     try:
         text = data.decode('utf-8-sig')
