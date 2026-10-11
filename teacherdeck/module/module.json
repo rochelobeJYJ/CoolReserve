@@ -4,7 +4,7 @@
   "id": "coolreserve",
   "name": "쿨 예약실",
   "description": "쿨메신저 예약 메시지를 작성하고 표·업무자료로 여러 초안을 만들어 검토해요.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "category": "utility",
   "icon": "icon.svg",
   "entry": "index.html",

@@ -173,8 +173,8 @@
     },
     {
       "path": "teacherdeck/module/CHANGELOG.md",
-      "bytes": 1267,
-      "sha256": "01bb8ea4f58e40ac2400668adb65af25c534a555055e200f2d606f48dadd09d5"
+      "bytes": 1365,
+      "sha256": "8b19694c74292d77326b04e7c30c2c6a467e123495a955578b4e0236f3f72ded"
     },
     {
       "path": "teacherdeck/module/README.md",
@@ -183,8 +183,8 @@
     },
     {
       "path": "teacherdeck/module/icon.svg",
-      "bytes": 308,
-      "sha256": "eabd02b065b9a59798cf02ac59808511fbea34ab4fd4cbfe39e538db7ca49f7a"
+      "bytes": 484,
+      "sha256": "aa60c2a81209c217a99eafbb39ab2f95e61a7c3e0937ec01e29a5bf66912900f"
     },
     {
       "path": "teacherdeck/module/index.html",
@@ -194,12 +194,12 @@
     {
       "path": "teacherdeck/module/module.json",
       "bytes": 577,
-      "sha256": "989f61e2b227fdc576a5c6d5cac3dc30f6b83a2a8059be09597e5daeabbc3df8"
+      "sha256": "3463826a07f534ea4bf479d5cd094ea9cc9a911113f65ef9d052e870ef0674ca"
     },
     {
       "path": "teacherdeck/module/package.json",
       "bytes": 398,
-      "sha256": "865921ad8fb3922370af1a2832f08331699f319339c6601c0db64e97f8bb7a6b"
+      "sha256": "99198d41cea7dfed86e0f8213ea5477cddb100838ebdf268ae8f1765c3aa6299"
     },
     {
       "path": "teacherdeck/module/src/App.test.tsx",
