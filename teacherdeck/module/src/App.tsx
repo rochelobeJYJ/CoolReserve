@@ -147,6 +147,7 @@ export function App({ deck }: { deck: Deck }) {
     [previewPage, setPreviewPage] = useState(0);
   const backupSource = useRef<FileHandleInfo | undefined>(undefined);
   const tableSource = useRef<FileHandleInfo | undefined>(undefined);
+  const loadedTableSource = useRef<FileHandleInfo | undefined>(undefined);
   const abortRef = useRef<AbortController | null>(null),
     blocked = busy || !!run?.active || corrupt || !loaded;
   useEffect(() => {
@@ -296,13 +297,15 @@ export function App({ deck }: { deck: Deck }) {
       const abort = new AbortController();
       abortRef.current = abort;
       const data = await readTable(deck, file, abort.signal);
+      const importedBatch = kind === "batch" ? batchDrafts(data[0]?.values ?? []) : [];
       tableSource.current = file;
+      loadedTableSource.current = file;
       setNotice(`${file.name}을 읽었어요. 표 내용을 확인해 주세요.`);
       setTables(data);
       setSheet(data[0]?.name ?? "");
       setSource(`${file.name} · ${data[0]?.name ?? ""}`);
       if (kind === "batch") {
-        setBatch(batchDrafts(data[0]?.values ?? []));
+        setBatch(importedBatch);
         setBatchPage(0);
         setView("batch");
       } else {
@@ -806,6 +809,7 @@ export function App({ deck }: { deck: Deck }) {
                           setBatch(batchDrafts(await parseText(paste, new AbortController().signal)));
                           setBatchPage(0);
                           setError("");
+                          tableSource.current = undefined;
                         });
                       }}
                     >
@@ -824,6 +828,7 @@ export function App({ deck }: { deck: Deck }) {
                         setBatch(batchDrafts(tables.find((t) => t.name === name)?.values ?? []));
                         setSheet(name);
                         setBatchPage(0);
+                        tableSource.current = loadedTableSource.current;
                       } catch {
                         setError("이 시트의 예약표 열 이름과 내용을 확인하세요.");
                       }
@@ -1043,6 +1048,8 @@ export function App({ deck }: { deck: Deck }) {
                           setSource("붙여넣은 표");
                           setRecipe((old) => ({ ...old, headerRows: detectHeader(values, old) }));
                           setReview(null);
+                          tableSource.current = undefined;
+                          loadedTableSource.current = undefined;
                         });
                       }}
                     >
@@ -1058,6 +1065,7 @@ export function App({ deck }: { deck: Deck }) {
                     disabled={blocked}
                     onChange={(name) => {
                       setSheet(name);
+                      tableSource.current = loadedTableSource.current;
                       setReview(null);
                     }}
                   />

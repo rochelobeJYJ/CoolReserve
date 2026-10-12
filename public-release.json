@@ -46,6 +46,7 @@
     "teacherdeck/module/src/Editor.tsx",
     "teacherdeck/module/src/archive.worker.ts",
     "teacherdeck/module/src/chunked-storage.ts",
+    "teacherdeck/module/src/file-input.test.tsx",
     "teacherdeck/module/src/io.ts",
     "teacherdeck/module/src/logic.test.ts",
     "teacherdeck/module/src/logic.ts",
