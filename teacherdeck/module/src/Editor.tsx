@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 // Additional terms: see LICENSE-ADDITIONAL-TERMS
-import type { Deck, MessagingRecipient } from "@deck/sdk";
+import type { Deck, MessagingRecipient, FileHandleInfo } from "@deck/sdk";
 import {
   Body,
   Button,
@@ -13,7 +13,7 @@ import {
   makeStyles,
   tokens,
 } from "@deck/ui";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   evidence,
   evidenceKey,
@@ -94,6 +94,7 @@ export function Editor({
     [value, setValue] = useState(draft),
     [recipientText, setRecipientText] = useState(draft.recipientNames.join("\n")),
     [error, setError] = useState(""),
+    [notice, setNotice] = useState(""),
     [repeatEnabled, setRepeat] = useState(false),
     [end, setEnd] = useState(draft.scheduledAt.slice(0, 10)),
     [weekdays, setWeekdays] = useState<number[]>([]),
@@ -130,11 +131,42 @@ export function Editor({
       setError(e instanceof Error ? e.message : "입력을 확인하세요.");
     }
   };
+  const attachmentState = useRef({ files: value.attachments, busy });
+  attachmentState.current = { files: value.attachments, busy };
+  const addAttachments = (files: FileHandleInfo[]) => {
+    if (attachmentState.current.busy) {
+      setError("현재 작업을 마친 뒤 첨부파일을 다시 놓아 주세요.");
+      return;
+    }
+    if (!files.length) {
+      setError("첨부할 파일을 놓아 주세요. 폴더는 첨부할 수 없어요.");
+      return;
+    }
+    const merged = [
+      ...new Map([...attachmentState.current.files, ...files].map((file) => [file.handle, file])).values(),
+    ];
+    if (merged.length > 10) {
+      setError("첨부파일은 10개까지 추가해요. 기존 첨부를 정리한 뒤 다시 놓아 주세요.");
+      return;
+    }
+    const added = merged.length - attachmentState.current.files.length;
+    attachmentState.current.files = merged;
+    patch({ attachments: merged, missingAttachments: [] });
+    setError("");
+    setNotice(
+      added
+        ? `${added}개 첨부파일을 추가했어요. ${files.map((file) => file.name).join(" · ")}`
+        : "이미 추가한 첨부파일이에요.",
+    );
+  };
+  const dropped = useRef(addAttachments);
+  dropped.current = addAttachments;
+  useEffect(() => deck.on("fs.dropped", ({ files }) => dropped.current(files)), [deck]);
   const attach = async () => {
     try {
       const files = await deck.fs.pickFiles({ multiple: true });
       if (!files.length) return;
-      patch({ attachments: files, missingAttachments: [] });
+      addAttachments(files);
     } catch {
       setError("첨부파일을 선택하지 못했습니다. 다시 선택하세요.");
     }
@@ -143,6 +175,7 @@ export function Editor({
     <div className={s.stack}>
       <Body>받는 사람과 한국시간 예약시각을 정하세요. 제목은 비워도 됩니다.</Body>
       {error && <InfoBar severity="error" message={error} />}
+      {notice && <InfoBar severity="informational" message={notice} />}
       <TextBox
         header="받는 사람 · 이름 명단 붙여넣기"
         value={recipientText}
@@ -206,7 +239,7 @@ export function Editor({
       />
       <SettingsExpander header="첨부 · 반복 예약">
         <div className={s.stack}>
-          <Caption>첨부는 파일 선택으로 추가합니다. 예약표의 전체 경로를 자동으로 열지 않습니다.</Caption>
+          <Caption>첨부는 파일을 놓거나 파일 선택으로 추가해요. 예약표의 전체 경로를 자동으로 열지 않아요.</Caption>
           <div className={s.row}>
             <Button
               disabled={busy}

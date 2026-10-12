@@ -37,7 +37,7 @@ Google 직접 연결은 승인 범위에 따라 비활성화되어 있습니다.
 | 시각           | 지금부터 10분 뒤~달력상 3개월, 한국시간                |
 | 대량 화면      | 목록 50건·입력/미리보기 25건씩                         |
 
-필수 캡은 messaging ^1.0 / storage ^1.0 / fs ^1.1입니다. connect·recipients·plan·start·status·cancel 여섯 typed SDK 메서드만 사용합니다. 압축 해제와 CSV·붙여넣기 파싱은 Worker에서 수행합니다. 모듈에 네트워크 호출·직접 Python 실행·사용자 경로 입력은 없습니다.
+필수 캡은 messaging ^1.0 / storage ^1.0 / fs ^1.4.0입니다. connect·recipients·plan·start·status·cancel 여섯 typed SDK 메서드만 사용합니다. 압축 해제와 CSV·붙여넣기 파싱은 Worker에서 수행합니다. 모듈에 네트워크 호출·직접 Python 실행·사용자 경로 입력은 없습니다.
 
 합성 회귀는 반복·표·동명이인·재연결·자료 변경 충돌·저장 실패·XLSX 왕복·SDK mock 검토/확인취소/잠금을 검사합니다. mock 테스트는 실제 Gentoo 등록 성공의 증명이 아닙니다. 실제 Windows 연결·조작은 해당 PC에서 별도로 확인해야 합니다.
 
@@ -68,3 +68,9 @@ Google 직접 연결은 승인 범위에 따라 비활성화되어 있습니다.
 > LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 > OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 > SOFTWARE.
+
+## 파일 입력과 저장 위치
+
+메시지 작성 화면에 파일을 놓으면 첨부 목록에 추가하고 파일명과 추가 결과를 표시해요. 첨부는 10개까지 받아요. 업무자료 화면의 XLSX·CSV 드롭은 현재 업무자료로 읽고, 다른 화면에서는 예약표로 읽어요. JSON 백업은 한 번에 한 파일씩 복구해요. 처리 중·지원하지 않는 형식·한도 초과는 화면에서 이유를 알려요. 파일을 놓은 뒤 선택창을 다시 열지 않아요.
+
+이 화면에서 가져오기를 완료한 자료와 연결된 결과는 원본 파일의 폴더에 새 이름으로 저장해요. 다른 폴더를 명시적으로 고르면 그 폴더에 바로 저장해요. 원본 파일이 없는 새 자료·양식·복구 사본은 저장할 폴더를 선택해요. 자동 하위 폴더를 만들거나 원본 파일을 덮어쓰지 않아요.
