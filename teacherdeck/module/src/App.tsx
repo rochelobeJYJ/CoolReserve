@@ -2,6 +2,7 @@
 // Additional terms: see LICENSE-ADDITIONAL-TERMS
 import type {
   Deck,
+  FileHandleInfo,
   MessagingConnection,
   MessagingRecipient,
   MessagingPlan,
@@ -144,6 +145,9 @@ export function App({ deck }: { deck: Deck }) {
     [review, setReview] = useState<WorkflowReview | null>(null),
     [reviewDirty, setReviewDirty] = useState(false),
     [previewPage, setPreviewPage] = useState(0);
+  const backupSource = useRef<FileHandleInfo | undefined>(undefined);
+  const tableSource = useRef<FileHandleInfo | undefined>(undefined);
+  const loadedTableSource = useRef<FileHandleInfo | undefined>(undefined);
   const abortRef = useRef<AbortController | null>(null),
     blocked = busy || !!run?.active || corrupt || !loaded;
   useEffect(() => {
@@ -278,22 +282,30 @@ export function App({ deck }: { deck: Deck }) {
       setEditor(null);
     });
   };
-  const readInput = (kind: "batch" | "workflow") =>
+  const readInput = (kind: "batch" | "workflow", provided?: FileHandleInfo) =>
     task(async () => {
-      const files = await deck.fs.pickFiles({
-        multiple: false,
-        filters: [{ name: "엑셀·CSV", extensions: ["xlsx", "csv"] }],
-      });
-      const file = files[0];
+      const file =
+        provided ??
+        (
+          await deck.fs.pickFiles({
+            multiple: false,
+            filters: [{ name: "엑셀·CSV", extensions: ["xlsx", "csv"] }],
+          })
+        )[0];
       if (!file) return;
+      setNotice(`${file.name}을 받았어요. 자료를 읽고 있어요.`);
       const abort = new AbortController();
       abortRef.current = abort;
       const data = await readTable(deck, file, abort.signal);
+      const importedBatch = kind === "batch" ? batchDrafts(data[0]?.values ?? []) : [];
+      tableSource.current = file;
+      loadedTableSource.current = file;
+      setNotice(`${file.name}을 읽었어요. 표 내용을 확인해 주세요.`);
       setTables(data);
       setSheet(data[0]?.name ?? "");
       setSource(`${file.name} · ${data[0]?.name ?? ""}`);
       if (kind === "batch") {
-        setBatch(batchDrafts(data[0]?.values ?? []));
+        setBatch(importedBatch);
         setBatchPage(0);
         setView("batch");
       } else {
@@ -487,24 +499,61 @@ export function App({ deck }: { deck: Deck }) {
       setSelected([]);
       invalidate();
     });
-  const exportBackup = () =>
+  const exportBackup = (chooseFolder = false) =>
     task(async () => {
-      if (await saveFile(deck, "쿨예약실_백업.json", backup(stateRef.current)))
+      if (
+        await saveFile(
+          deck,
+          "쿨예약실_백업.json",
+          backup(stateRef.current),
+          backupSource.current ?? tableSource.current,
+          chooseFolder,
+        )
+      )
         setNotice("초안·보관·양식을 백업했습니다. 첨부파일 내용은 포함하지 않습니다.");
     }, "백업을 저장하지 못했습니다. 다른 폴더로 다시 저장하세요.");
-  const importBackup = () =>
+  const importBackup = (provided?: FileHandleInfo) =>
     task(async () => {
-      const files = await deck.fs.pickFiles({
-        multiple: false,
-        filters: [{ name: "쿨 예약실 백업", extensions: ["json"] }],
-      });
-      if (!files[0]) return;
-      const next = readBackup(await readBytes(deck, files[0], new AbortController().signal));
+      const file =
+        provided ??
+        (
+          await deck.fs.pickFiles({
+            multiple: false,
+            filters: [{ name: "쿨 예약실 백업", extensions: ["json"] }],
+          })
+        )[0];
+      if (!file) return;
+      setNotice(`${file.name}을 받았어요. 백업을 읽고 있어요.`);
+      const next = readBackup(await readBytes(deck, file, new AbortController().signal));
       await persist(next, corrupt);
+      backupSource.current = file;
+      tableSource.current = undefined;
       setCorrupt(false);
       invalidate();
-      setNotice("백업을 복구했습니다. 첨부파일을 다시 선택하고 조직도 계정을 불러오세요.");
+      setNotice(`${file.name}에서 백업을 복구했어요. 첨부파일을 다시 선택하고 조직도 계정을 불러오세요.`);
     }, "백업을 복구하지 못했습니다. 원본 저장 기록을 보존했습니다.");
+  const dropped = useRef({ readInput, importBackup, view, loaded, corrupt, active: !!run?.active });
+  dropped.current = { readInput, importBackup, view, loaded, corrupt, active: !!run?.active };
+  useEffect(
+    () =>
+      deck.on("fs.dropped", ({ files }) => {
+        const file = files[0];
+        if (dropped.current.view === "editor") return; // The open editor accepts attachment drops.
+        if (lock.current || !dropped.current.loaded || dropped.current.active) {
+          setNotice("현재 작업을 마친 뒤 파일을 다시 놓아 주세요.");
+          return;
+        }
+        if (files.length !== 1 || !file || !["json", "xlsx", "csv"].includes(file?.ext.toLowerCase() ?? "")) {
+          setError("JSON 백업 또는 XLSX·CSV 자료를 한 번에 1개씩 놓아 주세요. 첨부는 메시지 작성 화면에 놓아 주세요.");
+          return;
+        }
+        setNotice(`${file.name}을 받았어요. 자료를 읽고 있어요.`);
+        if (file.ext.toLowerCase() === "json") dropped.current.importBackup(file);
+        else if (dropped.current.corrupt) setError("저장 자료를 먼저 복구한 뒤 예약표·업무자료를 놓아 주세요.");
+        else dropped.current.readInput(dropped.current.view === "workflow" ? "workflow" : "batch", file);
+      }),
+    [deck],
+  );
   const navigation = (
     <div className={s.row}>
       <Button
@@ -618,10 +667,13 @@ export function App({ deck }: { deck: Deck }) {
         >
           실행 기록
         </Button>
-        <Button disabled={blocked} onClick={exportBackup}>
+        <Button disabled={blocked} onClick={() => exportBackup()}>
           백업 저장
         </Button>
-        <Button disabled={busy || !!run?.active} onClick={importBackup}>
+        <Button disabled={blocked} onClick={() => exportBackup(true)}>
+          다른 폴더에 백업 저장
+        </Button>
+        <Button disabled={busy || !!run?.active} onClick={() => importBackup()}>
           백업 복구
         </Button>
       </div>
@@ -757,6 +809,7 @@ export function App({ deck }: { deck: Deck }) {
                           setBatch(batchDrafts(await parseText(paste, new AbortController().signal)));
                           setBatchPage(0);
                           setError("");
+                          tableSource.current = undefined;
                         });
                       }}
                     >
@@ -775,6 +828,7 @@ export function App({ deck }: { deck: Deck }) {
                         setBatch(batchDrafts(tables.find((t) => t.name === name)?.values ?? []));
                         setSheet(name);
                         setBatchPage(0);
+                        tableSource.current = loadedTableSource.current;
                       } catch {
                         setError("이 시트의 예약표 열 이름과 내용을 확인하세요.");
                       }
@@ -994,6 +1048,8 @@ export function App({ deck }: { deck: Deck }) {
                           setSource("붙여넣은 표");
                           setRecipe((old) => ({ ...old, headerRows: detectHeader(values, old) }));
                           setReview(null);
+                          tableSource.current = undefined;
+                          loadedTableSource.current = undefined;
                         });
                       }}
                     >
@@ -1009,6 +1065,7 @@ export function App({ deck }: { deck: Deck }) {
                     disabled={blocked}
                     onChange={(name) => {
                       setSheet(name);
+                      tableSource.current = loadedTableSource.current;
                       setReview(null);
                     }}
                   />
@@ -1317,7 +1374,12 @@ export function App({ deck }: { deck: Deck }) {
           disabled={blocked}
           onClick={() => {
             void task(async () => {
-              await saveFile(deck, "쿨예약실_업무기록.csv", historyCsv(stateRef.current.drafts));
+              await saveFile(
+                deck,
+                "쿨예약실_업무기록.csv",
+                historyCsv(stateRef.current.drafts),
+                tableSource.current ?? backupSource.current,
+              );
             });
           }}
         >

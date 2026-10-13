@@ -107,11 +107,24 @@ export function historyCsv(drafts: Draft[]): Uint8Array {
   ];
   return new TextEncoder().encode("\ufeff" + rows.map((row) => row.map(safe).join(",")).join("\r\n"));
 }
-export async function saveFile(deck: Deck, name: string, bytes: Uint8Array): Promise<boolean> {
-  const folder = await deck.fs.pickFolder();
-  if (!folder) return false;
-  const batch = await deck.fs.createOutputFolder({ parentHandle: folder.handle, suggestedName: "쿨예약실 내보내기" });
-  await deck.fs.writeBlob({ batchId: batch.batchId, suggestedName: name, blob: new Blob([bytes.slice().buffer]) });
+export async function saveFile(
+  deck: Deck,
+  name: string,
+  bytes: Uint8Array,
+  source?: FileHandleInfo,
+  chooseFolder = false,
+): Promise<boolean> {
+  const location =
+    source && !chooseFolder
+      ? { sourceHandle: source.handle }
+      : await deck.fs.pickFolder().then((folder) => (folder ? { parentHandle: folder.handle } : null));
+  if (!location) return false;
+  const batch = await deck.fs.openOutputFolder(location);
+  try {
+    await deck.fs.writeBlob({ batchId: batch.batchId, suggestedName: name, blob: new Blob([bytes.slice().buffer]) });
+  } finally {
+    await deck.fs.closeOutputFolder({ batchId: batch.batchId });
+  }
   return true;
 }
 export async function saveTemplate(deck: Deck, preset: "batch" | "general" | "lunch"): Promise<boolean> {
