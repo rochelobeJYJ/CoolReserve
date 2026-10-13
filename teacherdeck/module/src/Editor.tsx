@@ -131,8 +131,8 @@ export function Editor({
       setError(e instanceof Error ? e.message : "입력을 확인하세요.");
     }
   };
-  const attachmentState = useRef({ files: value.attachments, busy });
-  attachmentState.current = { files: value.attachments, busy };
+  const attachmentState = useRef({ files: value.attachments, missing: value.missingAttachments, busy });
+  attachmentState.current = { files: value.attachments, missing: value.missingAttachments, busy };
   const addAttachments = (files: FileHandleInfo[]) => {
     if (attachmentState.current.busy) {
       setError("현재 작업을 마친 뒤 첨부파일을 다시 놓아 주세요.");
@@ -150,8 +150,17 @@ export function Editor({
       return;
     }
     const added = merged.length - attachmentState.current.files.length;
+    const previousHandles = new Set(attachmentState.current.files.map((file) => file.handle));
+    const missing = [...attachmentState.current.missing];
+    const key = (name: string) => name.normalize("NFC").toLocaleLowerCase("en-US");
+    // Each newly selected handle restores at most one same-name attachment.
+    for (const file of merged.filter((file) => !previousHandles.has(file.handle))) {
+      const index = missing.findIndex((name) => key(name) === key(file.name));
+      if (index >= 0) missing.splice(index, 1);
+    }
     attachmentState.current.files = merged;
-    patch({ attachments: merged, missingAttachments: [] });
+    attachmentState.current.missing = missing;
+    patch({ attachments: merged, missingAttachments: missing });
     setError("");
     setNotice(
       added
