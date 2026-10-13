@@ -3,8 +3,8 @@
   "files": [
     {
       "path": ".gitignore",
-      "bytes": 3849,
-      "sha256": "8113a3eea925ddfb501393fe7ef3aa99281963794c4bffcb4abf4b5b3cd67ca9"
+      "bytes": 4073,
+      "sha256": "47ca7ad66abafb97b222f4155197592e888b1e6bdec4658856d804a8074ddd2e"
     },
     {
       "path": "INSTALL.cmd",
@@ -18,8 +18,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11675,
-      "sha256": "b9a63f6ad9ded6f3812ecbbae24cab03f9320e995607c160181b1cfd0302f700"
+      "bytes": 11792,
+      "sha256": "130de9f35c4e5258e8ba2a091a8f674b47f2574eb085094699bdfdd92a08cd40"
     },
     {
       "path": "START.cmd",
@@ -93,8 +93,8 @@
     },
     {
       "path": "app/teacherdeck_worker.py",
-      "bytes": 20560,
-      "sha256": "01a6aca0d20289561afdab0e553225fcb17371e9439c9d81112c744cddcc201f"
+      "bytes": 21006,
+      "sha256": "56a201b15735d44676edd5c35a8db6a586758984868a9df29adb93d588ce3367"
     },
     {
       "path": "app/verification.py",
@@ -133,8 +133,8 @@
     },
     {
       "path": "docs/TEACHERDECK.md",
-      "bytes": 4814,
-      "sha256": "2a2429565cf354767e9f6af440405a4ec02104e1f533e067680b522e6172542f"
+      "bytes": 4844,
+      "sha256": "490477d795560cfda2008a971cf2aae80ba3a5eb0b89602f6ec4d6dfe352f455"
     },
     {
       "path": "docs/google-connection.html",
@@ -143,8 +143,8 @@
     },
     {
       "path": "public-release.json",
-      "bytes": 4115,
-      "sha256": "26e824702bf0c4be98e253ebde386881f91e85de75cd533691b2132fea0d5584"
+      "bytes": 4334,
+      "sha256": "32211afecf24d00f8f85c1ba4903a96091175c56c4e0cb1e53a6ad3e65763bea"
     },
     {
       "path": "requirements.txt",
@@ -158,28 +158,28 @@
     },
     {
       "path": "teacherdeck/LICENSE",
-      "bytes": 35149,
-      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+      "bytes": 35823,
+      "sha256": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809"
     },
     {
       "path": "teacherdeck/LICENSE-ADDITIONAL-TERMS",
-      "bytes": 848,
-      "sha256": "2af7f436b7b224329d8177b4892267f7208a58a9c798709f749198c3c7682c58"
+      "bytes": 864,
+      "sha256": "e981153c1127b97072a71e567f0bd6f894e88fa06d08fdee475584ce086d3d62"
     },
     {
       "path": "teacherdeck/README.md",
-      "bytes": 1268,
-      "sha256": "473155613109e681974e84383c46e4e5b429c4e13b1ab8bc25920ee886f6b379"
+      "bytes": 1275,
+      "sha256": "1b2de07283f0a1e6bb199cda7de5c9f8e58a2d8b6d6de8df4e422826a2bc7b27"
     },
     {
       "path": "teacherdeck/module/CHANGELOG.md",
-      "bytes": 1365,
-      "sha256": "8b19694c74292d77326b04e7c30c2c6a467e123495a955578b4e0236f3f72ded"
+      "bytes": 2043,
+      "sha256": "1d3bdaf8a83cbfb829ba76cf5e50d71c0c9cc1bdb525c94425a0d64d90f0d768"
     },
     {
       "path": "teacherdeck/module/README.md",
-      "bytes": 7623,
-      "sha256": "d43e29723d37fd124599f03e33e46156c91fe67f45227987073fb74336e5d483"
+      "bytes": 8837,
+      "sha256": "7bb315320678d11dece8cde676616022da8ffca27d4aa8bcb2eac19603e7cb1b"
     },
     {
       "path": "teacherdeck/module/icon.svg",
@@ -193,13 +193,13 @@
     },
     {
       "path": "teacherdeck/module/module.json",
-      "bytes": 577,
-      "sha256": "3463826a07f534ea4bf479d5cd094ea9cc9a911113f65ef9d052e870ef0674ca"
+      "bytes": 637,
+      "sha256": "59d218827ce1406f3a8e20e62ddba0905dfe4ef7cf35c2d73ce6ec565e9e569d"
     },
     {
       "path": "teacherdeck/module/package.json",
       "bytes": 398,
-      "sha256": "99198d41cea7dfed86e0f8213ea5477cddb100838ebdf268ae8f1765c3aa6299"
+      "sha256": "9d969f2cd247ea585bdd0f661b30e1172ae2a2315418d9d691a25fe34c60d0aa"
     },
     {
       "path": "teacherdeck/module/src/App.test.tsx",
@@ -208,13 +208,18 @@
     },
     {
       "path": "teacherdeck/module/src/App.tsx",
-      "bytes": 62403,
-      "sha256": "819e9724a4701ee491fffb52d03122c20b3bbaf168cb94a14c1ad8447fc1323b"
+      "bytes": 65323,
+      "sha256": "ca6e0cf4a615389f6fcbd1981e3409a3bae22a87871eb6666d06d14f6c5265c6"
+    },
+    {
+      "path": "teacherdeck/module/src/Editor.test.tsx",
+      "bytes": 3757,
+      "sha256": "d846a0f5c1438a110b0951a9b606ce5921adb7902ffbcb2ecb1374f0eb36c78f"
     },
     {
       "path": "teacherdeck/module/src/Editor.tsx",
-      "bytes": 9292,
-      "sha256": "e2cd4658a3881d7addef8902910dc236cffed641c6966506abd64774c3a762a4"
+      "bytes": 11410,
+      "sha256": "85f8390ca89657945d5409817e03080d46988226c0ff80c743d809bfe044f61e"
     },
     {
       "path": "teacherdeck/module/src/archive.worker.ts",
@@ -227,9 +232,14 @@
       "sha256": "187bdfafb42436d4ecbb4f3cc83232c410220fbb3eeb32d03f05a3ff68155467"
     },
     {
+      "path": "teacherdeck/module/src/file-input.test.tsx",
+      "bytes": 14725,
+      "sha256": "b5f98d779217742dce827ee3f071f74fe1c5458aa226546b778f2d9ebe0deaf5"
+    },
+    {
       "path": "teacherdeck/module/src/io.ts",
-      "bytes": 5958,
-      "sha256": "0394fe3245f5c4902054d26d5bcaa530c256767cabeff5dc3c9518845ce72858"
+      "bytes": 6190,
+      "sha256": "292ea089adc5b2250218117ea9932fcc79bbc0d4cd8709085f447761f5114d6d"
     },
     {
       "path": "teacherdeck/module/src/logic.test.ts",
@@ -288,8 +298,8 @@
     },
     {
       "path": "teacherdeck_worker.py",
-      "bytes": 481,
-      "sha256": "4aea0e13f61bf2bc7e240f925d719836c5b4e6bf161e231b3713a5ec8a751553"
+      "bytes": 497,
+      "sha256": "700f08a58b0e0ba1d6308cfe6ddff029065468f75b25122ff7a7eb773c2ce006"
     },
     {
       "path": "templates/lunch_preset.xlsx",
@@ -418,8 +428,8 @@
     },
     {
       "path": "tests/test_public_release.py",
-      "bytes": 10666,
-      "sha256": "f9b8b19007c204aac0ca46aec651e996803db91a4f124058ec98cb971396a02f"
+      "bytes": 10871,
+      "sha256": "64aac0ee31ba209dbf566d63413c0574f45cb497e50abf8d7911199c839b1fdf"
     },
     {
       "path": "tests/test_registration_guide_ui.cjs",
@@ -443,8 +453,8 @@
     },
     {
       "path": "tests/test_teacherdeck_worker.py",
-      "bytes": 12637,
-      "sha256": "9cc2baf8a755212a80f115cb779960b4eed6d40bea16d1b283ac32a7f703691c"
+      "bytes": 12891,
+      "sha256": "14485249d7461b388c33b044b0d3bf9c9be688eea38b595c462ea1622dbe8d97"
     },
     {
       "path": "tests/test_window_diagnosis.py",
@@ -533,8 +543,8 @@
     },
     {
       "path": "tools/check_public.py",
-      "bytes": 10981,
-      "sha256": "a3b7d975d146a56f1b07e56e04051f6b8b24de9f9b5a5be8b77024c87a3a2a89"
+      "bytes": 11201,
+      "sha256": "9dff485d475ddb85583963b7d64b19f1709822fd26bdb2d7eea2999a5f9f097c"
     },
     {
       "path": "tools/install.ps1",
@@ -548,8 +558,8 @@
     },
     {
       "path": "tools/test_teacherdeck_managed.py",
-      "bytes": 2056,
-      "sha256": "97f6ce6ac06a7aadcb761da47fc4e9c6bc85c96727bf553b5d2b91684f6ecfc3"
+      "bytes": 2103,
+      "sha256": "16fbf3f37293125cca633033509e24e79c2cae8508cd2e0e062c2d71748e2751"
     },
     {
       "path": "tools/verify_offline.py",
